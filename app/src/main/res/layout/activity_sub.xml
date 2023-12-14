@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SubActivity">
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:orientation="horizontal"
+        android:rowCount="2"
+        app:layout_constraintBottom_toTopOf="@+id/friendList"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+
+        <!-- 첫 번째 줄, 첫 번째 뷰 -->
+        <TextView
+            android:id="@+id/firstView"
+            android:layout_width="match_parent"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:text="다가오는 일정"
+            android:layout_height="206dp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <!-- 두 번째 줄, 첫 번째 뷰 -->
+        <TextView
+            android:id="@+id/secondView1"
+            android:layout_height="128dp"
+            android:layout_width="193dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_weight="1"
+            android:background="#FF0000"
+            android:text="대화 로그"
+            android:layout_marginRight="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/friendList" />
+
+        <!-- 두 번째 줄, 두 번째 뷰 -->
+        <TextView
+            android:id="@+id/secondView2"
+            android:layout_height="128dp"
+            android:layout_width="193dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_weight="1"
+            android:background="#0000FF"
+            android:layout_marginRight="10dp"
+            android:text="즉각 매칭" />
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/friendList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/mainListView"
+        tools:text="친구 목록"
+        />
+
+    <ListView
+        android:id="@+id/mainListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+    </ListView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
