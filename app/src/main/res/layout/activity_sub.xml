@@ -56,6 +56,12 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <!-- 첫 번째 줄, 첫 번째 뷰 -->
+<!--        <ImageView-->
+<!--            android:id="@+id/iconImageView"-->
+<!--            android:layout_width="48dp"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:src="@drawable/baseline_calendar_month_24"-->
+<!--            />-->
         <TextView
             android:id="@+id/firstView"
             android:layout_width="match_parent"
@@ -68,7 +74,9 @@
             android:gravity="left|bottom"
             android:paddingLeft="10dp"
             android:paddingBottom="10dp"
-            android:text="다가오는 일정" />
+            android:background="@drawable/view_border"
+            android:text="다가오는 일정"/>
+
 
         <!-- 두 번째 줄, 첫 번째 뷰 -->
         <Button

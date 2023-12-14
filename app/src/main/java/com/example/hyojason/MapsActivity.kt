@@ -1,7 +1,9 @@
 package com.example.hyojason
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -26,6 +28,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        // 뒤로가기버튼
+        val transitionButton1: ImageButton = findViewById(R.id.backButton1)
+        transitionButton1.setOnClickListener {
+            val intent = Intent(this@MapsActivity, SubActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     /**
