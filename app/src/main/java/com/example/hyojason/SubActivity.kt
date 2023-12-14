@@ -10,6 +10,7 @@ import java.util.List;
 import android.view.View
 import android.content.Intent
 import android.widget.ImageButton
+import android.widget.TextView
 
 class SubActivity : AppCompatActivity() {
 
@@ -32,6 +33,13 @@ class SubActivity : AppCompatActivity() {
         val transitionButton: ImageButton = findViewById(R.id.backButton)
         transitionButton.setOnClickListener {
             val intent = Intent(this@SubActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 다가오는일정 버튼 클릭시 지도뷰로 화면전환
+        val mapButton: TextView = findViewById(R.id.firstView)
+        mapButton.setOnClickListener {
+            val intent = Intent(this@SubActivity, MapsActivity::class.java)
             startActivity(intent)
         }
     }
