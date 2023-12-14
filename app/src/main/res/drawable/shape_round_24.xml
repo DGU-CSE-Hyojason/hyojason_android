@@ -1,4 +1,0 @@
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <corners android:radius="24dp" /> <!-- radius 값에 따라 라운드 정도가 결정됨 -->
-</shape>
