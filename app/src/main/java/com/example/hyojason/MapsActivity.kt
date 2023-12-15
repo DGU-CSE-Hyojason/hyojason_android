@@ -29,7 +29,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        // 뒤로가기버튼
+        // 뒤로 가기 버튼
         val transitionButton1: ImageButton = findViewById(R.id.backButton1)
         transitionButton1.setOnClickListener {
             val intent = Intent(this@MapsActivity, SubActivity::class.java)
@@ -49,9 +49,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+        // Add a marker in destination and move the camera
+        val sydney = LatLng(37.0, 127.0)
+        mMap.addMarker(MarkerOptions().position(sydney).title("도착지"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 }
