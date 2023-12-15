@@ -3,13 +3,13 @@ package com.example.hyojason
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.speech.RecognizerIntent
-import android.speech.SpeechRecognizer
-import android.speech.RecognitionListener
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
+import com.github.kittinunf.fuel.Fuel
+import com.github.kittinunf.fuel.core.extensions.jsonBody
 
 class MainActivity : AppCompatActivity() {
 
@@ -54,9 +54,36 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun callApiWithRecognizedText() {
+    private fun callApiWithRecognizedText(requestStr:String) {
         // 여기에서 API를 호출하고 recognizedText를 사용하세요.
         // 예시: MyApiService.callApi(recognizedText)
+        callApiGet(requestStr)
+    }
+    private fun callApiGet(requestStr: String) {
+
+        val url = "https://09c7-210-94-220-228.ngrok-free.app/api/chatbot/reply"
+
+        // 전송할 JSON 데이터
+        val jsonData = """
+        {
+            "question": "$requestStr"
+        }
+    """.trimIndent()
+
+        Fuel.post(url)
+            .header("Content-Type" to "application/json")
+            .jsonBody(jsonData)
+            .response { request, response, result ->
+                val (data, error) = result
+                if (error == null) {
+                    val outputText: TextView = findViewById(R.id.outputText)
+                    outputText.text = data?.let { String(it) }
+                    println("Response data: $data")
+                } else {
+                    println("Error: $error")
+                    val outputText: TextView = findViewById(R.id.outputText)
+                }
+            }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -72,7 +99,7 @@ class MainActivity : AppCompatActivity() {
                 inputText.text = recognizedText
 
                 // Call API with the updated recognizedText
-                callApiWithRecognizedText()
+                callApiWithRecognizedText(recognizedText)
             }
         }
     }
