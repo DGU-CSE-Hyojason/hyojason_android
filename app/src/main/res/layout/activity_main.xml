@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- 위쪽 뷰 (보라색 배경) -->
+    <!-- 위쪽 뷰 -->
     <View
         android:id="@+id/topView"
         android:layout_width="0dp"
@@ -26,7 +26,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_gravity="start|top"
-        android:text="찾아드릴게요 :)"
+        android:padding="4dp"
+        android:text="응답"
         android:textColor="@android:color/white"
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@id/guideline"
@@ -43,7 +44,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.45" />
 
-    <!-- 아래쪽 뷰 (검은 배경) -->
+    <!-- 아래쪽 뷰 -->
     <View
         android:id="@+id/bottomView"
         android:layout_width="0dp"
@@ -53,21 +54,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- 하단 버튼 레이아웃 -->
-
+    <!-- 버튼 영역 -->
     <TextView
         android:id="@+id/inputText"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_gravity="start|top"
-        android:text="안경이 없어유.."
+        android:padding="4dp"
+        android:text="말을 걸어주세요."
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <android.widget.Button
         android:id="@+id/keyboardButton"
