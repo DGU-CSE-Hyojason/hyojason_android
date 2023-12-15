@@ -52,7 +52,7 @@
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:paddingTop="20dp"
-            android:drawableTop="@drawable/ic_keyboard_voice_48dp"
+            android:drawableTop="@drawable/icon_keyboard_voice_48dp"
             android:background="@drawable/shape_oval_purble_light"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/button3"
