@@ -42,6 +42,9 @@ class SubActivity : AppCompatActivity() {
             val intent = Intent(this@SubActivity, MapsActivity::class.java)
             startActivity(intent)
         }
+
+//        val yourView: View = findViewById(R.id.friendList)
+//        yourView.bringToFront()
     }
 
 }
