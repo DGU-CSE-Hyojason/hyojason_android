@@ -1,5 +1,6 @@
 package com.example.hyojason
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.LinearLayout
@@ -35,6 +36,7 @@ class ChatActivity : AppCompatActivity() {
         val chatContainer: LinearLayout = findViewById(R.id.chatContainer)
         val chatText = TextView(this)
         chatText.text = message
+        chatText.setTextColor(Color.BLACK)
         chatText.setPadding(32, 32, 32, 32)
         chatText.maxWidth = (resources.displayMetrics.widthPixels * 0.7).toInt()
 
@@ -42,7 +44,7 @@ class ChatActivity : AppCompatActivity() {
             LinearLayout.LayoutParams.WRAP_CONTENT,
             LinearLayout.LayoutParams.WRAP_CONTENT
         )
-        params.setMargins(16)
+        params.setMargins(32)
 
         if (isUser) {
             params.gravity = Gravity.START
