@@ -10,10 +10,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // move to subactivity
+        // move to SubActivity
         val transitionButton: Button = findViewById(R.id.movePageButton)
         transitionButton.setOnClickListener {
             val intent = Intent(this, SubActivity::class.java)
+            startActivity(intent)
+        }
+
+        // move to ChatActivity
+        val keyboardButton: Button = findViewById(R.id.keyboardButton)
+        keyboardButton.setOnClickListener {
+            val intent = Intent(this, ChatActivity::class.java)
             startActivity(intent)
         }
     }
